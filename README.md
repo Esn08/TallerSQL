@@ -69,6 +69,12 @@ This table is the main focus of the current CRUD API.
 
 ## API Endpoints
 
+run api:
+```
+npm run api
+
+```
+
 ## Vehicle Endpoints
 
 Depending on how the router is mounted in your server file, the final URL prefix may vary.
