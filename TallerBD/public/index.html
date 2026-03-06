@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Vehicle</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<main class="container">
+    <h1>CRUD de Vehículos</h1>
+
+    <section class="card">
+        <h2>Crear / Editar vehículo</h2>
+        <form id="vehicleForm">
+            <input type="hidden" id="vehicle_id" />
+
+            <div class="grid">
+                <div class="field">
+                    <label for="plate_vehicle">Placa</label>
+                    <input type="text" id="plate_vehicle" placeholder="ABC123" required />
+                </div>
+
+                <div class="field">
+                    <label for="model">Modelo</label>
+                    <input type="text" id="model" placeholder="Mazda" required />
+                </div>
+
+                <div class="field">
+                    <label for="color">Color</label>
+                    <input type="text" id="color" placeholder="Rojo" required />
+                </div>
+
+                <div class="field">
+                    <label for="vehicle_state">Estado del vehículo</label>
+                    <select id="vehicle_state">
+                        <option value="Nuevo">Nuevo</option>
+                        <option value="Usado">Usado</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="mileage">Kilometraje</label>
+                    <input type="number" id="mileage" min="0" value="0" />
+                </div>
+
+                <div class="field">
+                    <label for="operating_state">Estado operativo</label>
+                    <select id="operating_state" required>
+                        <option value="Disponible">Disponible</option>
+                        <option value="Vendido">Vendido</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" id="saveBtn">Guardar</button>
+                <button type="button" id="cancelBtn" class="secondary">Cancelar edición</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Buscar vehículo por ID</h2>
+        <div class="search-row">
+            <input type="number" id="searchId" placeholder="Ingrese el vehicle_id" min="1" />
+            <button id="searchBtn">Buscar</button>
+            <button id="loadAllBtn" class="secondary">Cargar todos</button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Listado de vehículos</h2>
+        <p id="message" class="message"></p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Estado vehículo</th>
+                    <th>Kilometraje</th>
+                    <th>Estado operativo</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="vehicleTableBody"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>
