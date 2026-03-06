@@ -69,6 +69,12 @@ This table is the main focus of the current CRUD API.
 
 ## API Endpoints
 
+install dependences:
+```
+npm install
+```
+
+
 run api:
 ```
 npm run api
